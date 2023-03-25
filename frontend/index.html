@@ -1,28 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LurkForWork</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- You can add your styles and scripts here -->
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css" />
-</head>
-<body>
-    <!-- This is an example app structure, you can modify this as much as you choose --> 
-    <header>
-        <h1>lurkforwork.com</h1>
-        <nav>
-            <li class="nav-item">Item</li>
-            <li class="nav-item">Item</li>
-        </nav>
-    </header>
-    <main role="main">
-        <!-- app goes here --> 
-    </main>
-    <footer>
-        <p>&copy; lurkforwork.com 2022</p>
-    </footer>
-    <script type="module" src="src/main.js"></script>
-</body>
+  <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LurkForWork</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+      <nav>
+        <ul>
+          <li id="home"><a href="#">Home</a></li>
+          <li id="profile-buttom"><a href="#">Profile</a></li>
+          <li id="post-button"><a href="#">Post</a></li>
+          <li id="logout"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+  </head>
+  <body>
+      <!-- This is an example app structure, you can modify this as much as you choose --> 
+      <header>
+          <nav>
+              <li class="nav-item" id="nav-register">Register</li>
+              <li class="nav-item" id="nav-login">Login</li>
+          </nav>
+      </header>
+      <main role="main">
+        <div id="section-logged-in" class="hide">
+          <div id="post" class="hide postpage">
+            <h2 class="feed-page-title">Post a work!</h2>
+            <div id="my-post" class="post-container">
+              <input type="text" id="post-title" required class="form-control" placeholder="Title">
+              <br>
+              <input type="text" id="post-image" required class="form-control" placeholder="Image">
+              <br>
+              <textarea class="form-control" id="post-description" required placeholder="Description"></textarea>
+              <br>
+              <button id="post-submit" class="common-button submit-button">Submit!</button>
+            </div>
+          </div>
+          <div id="profile" class="hide">
+            <h2 class="feed-page-title">Your profile</h2>
+            <div id="profile-content"></div>
+          </div>
+          <div id="user-profile" class="hide">
+            <h2 class="feed-page-title">The profile you want!</h2>
+            <div id="user-profile-content"></div>
+          </div>
+          <div id="feed-data-page">
+            <h2 class="feed-page-title">Find a job you like!</h2>
+            <div id="feed-items"></div>       
+            <button id="create-job-fake" class="hide">Create Fake Job</button><br />
+            <div id="watchContainer">
+            <label for="watchEmail">Who do you want to watch? input his/her Email!</label>
+            <input id="watchEmail"  class="input-field">
+            <button id="watch-button" class="common-button">Watch him/her!</button>
+            </div>
+            <br />
+            <label for="endpoint-value">Which page of jobs would you like to see?</label>
+            <input type="number" id="endpoint-value" min="0" step="1" class="input-field" value="0" />
+            <button id="feed-data" class="common-button">Let's GO</button>
+          </div>
+        </div>
+        <div id="section-logged-out" >
+            <div id="page-register" class="hide">
+              <h1>Welcome to LurkForWork!</h1>
+                <div class="form-group">
+                  <div class="input-container">
+                    <label for="register-email" class="hide">Email:</label>
+                    <input class="form-control" id="register-email" type="text" placeholder="E-mail"/>
+                  </div>
+                  <div class="input-container">
+                    <label for="register-password" class="hide">Password:</label>
+                    <input class="form-control" id="register-password" type="password" placeholder="Password" />
+                  </div>
+                  <div class="input-container">
+                    <label for="register-password-confirm" class="hide">Confirm Password:</label>
+                    <input class="form-control" id="register-password-confirm" type="password" placeholder="Confirm Password"/>
+                  </div>
+                  <div class="input-container">
+                    <label for="register-name" class="hide">Name:</label>
+                    <input class="form-control" id="register-name" type="text" placeholder="Name"/>
+                  </div>
+                  <button id="register-button">Register</button>
+                  <p class="error-message hide" id="register-error-message">Passwords do not match</p>
+                  <div class="Prompt-statements">Already have an account? <a href="#" id="log-in-account">Log in</a> to your account!</div>
+                </div>
+            </div>
+            <div id="page-login">
+              <h1>Welcome to LurkForWork!</h1>
+                <div class="form-group">
+                  <div class="input-container">
+                    <label for="login-email" class="hide">Email:</label>
+                    <input class="form-control" id="login-email" type="text" placeholder="E-mail"/>
+                  </div>
+                  <div class="input-container">
+                    <label for="login-password" class="hide">Password:</label>
+                    <input class="form-control" id="login-password" type="password" placeholder="Password"/>
+                  </div>
+                  <button id="login-button">Login</button>
+                  <div class="Prompt-statements">Not in yet? <a href="#" id="join-us">Join us!</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="error-popup" class="hide">
+            <div id="error-message"></div>
+            <button id="close-error-button">X</button>
+        </div>
+      </main>
+      <footer>
+          <div class="Copyright">&copy; lurkforwork.com 2023</div>
+      </footer>
+      <script type="module" src="src/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>

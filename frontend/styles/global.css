@@ -2,6 +2,376 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100%;
     font-family: Arial;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+nav {
+    display: none;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav li a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+nav li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+  
+#nav-register, #nav-login {
+    display: none;
+}
+body{
+    content: "";
+    background-image: url('background1.png');   
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.8;
+}
+body.logged-in {
+    background-image: url('background2.png');
+  }
+
+body.logged-out {
+    background-image: url('background1.png');
+}
+
+.hide {
+    display: none;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+#error-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#close-error-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 30px;       
+    height: 30px;      
+    padding: 0;        
+    line-height: 30px; 
+    text-align: center; 
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group input[type="text"], .form-group input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 4rem; 
+    color: #4C5052;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add text shadow */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 300px;
+}
+
+.input-label {
+    margin-right: 10px;
+    width: 30%;
+    text-align: right;
+}
+
+.form-control {
+    width: 70%;
+}
+
+.Prompt-statements{
+    margin-top:20px ;
+}
+
+.Copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 0.8rem;
+}
+
+.feed-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.feed-item {
+    transform: scale(0.8);
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.feed-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feed-item-description {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.feed-page-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    margin-bottom: 50px;
+}
+.common-button {
+    background-color: #c69d99;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+  
+.common-button:hover {
+    background-color: #c6523f;
+}
+
+.feed-item-like-btn{
+    width: 10%;
+}
+
+.input-field {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    outline: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+  
+.input-field:focus {
+    border-color: #b5453a;
+    box-shadow: 0 0 0 0.1rem #c69d99;
+}
+.feed-user-image {
+    min-width: 30%; 
+    object-fit: cover; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+#profile {
+    background-image: url('background2.png');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.post-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+.submit-button{
+    display: block;
+    margin: 20px auto 0;
+}
+
+.profile-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 50%;
+    margin: 30px auto;
+}
+
+.user-profile-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 50%;
+    margin: 30px auto;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-email {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.jobs-posted-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.jobs-posted-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-posted-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-posted-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.job-posted-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
 }
